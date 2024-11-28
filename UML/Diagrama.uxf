@@ -1,0 +1,450 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="15.1.0">
+  <zoom_level>6</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>264</x>
+      <y>66</y>
+      <w>318</w>
+      <h>96</h>
+    </coordinates>
+    <panel_attributes>uniandes.dpoo.swing.interfaz.agregar::PanelBotonesAgregar
+--
+-CREAR = "nuevo": String
+-CERRAR = "ver": String
+-butNuevo: JButton
+-butCerrar: JButton
+-ventanaPrincipal: VentanaAgregarRestaurante
+--
++PanelBotonesAgregar(VentanaAgregarRestaurante ventanaPrincipal): ctor
++actionPerformed(ActionEvent e): void
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>6</x>
+      <y>216</y>
+      <w>270</w>
+      <h>96</h>
+    </coordinates>
+    <panel_attributes>uniandes.dpoo.swing.interfaz.agregar::PanelEditarRestaurante
+--
+-txtNombre: JTextField
+-cbbCalificacion: JComboBox&lt;String&gt;
+-cbbVisitado: JComboBox&lt;String&gt;
+--
++PanelEditarRestaurante(): ctor
++getVisitado(): boolean
++getCalificacion(): int
++getNombre(): String
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>6</x>
+      <y>66</y>
+      <w>252</w>
+      <h>132</h>
+    </coordinates>
+    <panel_attributes>uniandes.dpoo.swing.interfaz.agregar::PanelMapaAgregar
+--
+-labMapa: JLabel
+-x: int
+-y: int
+--
++PanelMapaAgregar(): ctor
++getCoordenadas(): int[]
++paint(Graphics g): void
++mouseClicked(MouseEvent e): void
++mousePressed(MouseEvent e): void
++mouseReleased(MouseEvent e): void
++mouseEntered(MouseEvent e): void
++mouseExited(MouseEvent e): void
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>282</x>
+      <y>216</y>
+      <w>288</w>
+      <h>96</h>
+    </coordinates>
+    <panel_attributes>uniandes.dpoo.swing.interfaz.agregar::VentanaAgregarRestaurante
+--
+-panelDetalles: PanelEditarRestaurante
+-panelBotones: PanelBotonesAgregar
+-panelMapa: PanelMapaAgregar
+-ventanaPrincipal: VentanaPrincipal
+--
++VentanaAgregarRestaurante(VentanaPrincipal principal): ctor
++agregarRestaurante(): void
++cerrarVentana(): void
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1614</x>
+      <y>90</y>
+      <w>252</w>
+      <h>78</h>
+    </coordinates>
+    <panel_attributes>uniandes.dpoo.swing.interfaz.mapa::PanelMapaVisualizar
+--
+-labMapa: JLabel
+-restaurantes: List&lt;Restaurante&gt;
+--
++PanelMapaVisualizar(): ctor
++paint(Graphics g): void
++actualizarMapa(List&lt;Restaurante&gt; nuevosRestaurantes): void
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1242</x>
+      <y>90</y>
+      <w>366</w>
+      <h>102</h>
+    </coordinates>
+    <panel_attributes>uniandes.dpoo.swing.interfaz.mapa::VentanaMapa
+--
+-VISITADOS = "VISITADOS": String
+-TODOS = "TODOS": String
+-panelMapa: PanelMapaVisualizar
+-radioTodos: JRadioButton
+-radioVisitados: JRadioButton
+-ventanaPrincipal: VentanaPrincipal
+--
++VentanaMapa(VentanaPrincipal ventanaPrincipal, List&lt;Restaurante&gt; restaurantes): ctor
++actionPerformed(ActionEvent e): void
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>978</x>
+      <y>66</y>
+      <w>234</w>
+      <h>96</h>
+    </coordinates>
+    <panel_attributes>uniandes.dpoo.swing.interfaz.principal::PanelBotones
+--
+-NUEVO = "nuevo": String
+-VER = "ver": String
+-butNuevo: JButton
+-butVerTodos: JButton
+-ventanaPrincipal: VentanaPrincipal
+--
++PanelBotones(VentanaPrincipal ventanaPrincipal): ctor
++actionPerformed(ActionEvent e): void
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>618</x>
+      <y>240</y>
+      <w>318</w>
+      <h>96</h>
+    </coordinates>
+    <panel_attributes>uniandes.dpoo.swing.interfaz.principal::PanelDetallesRestaurante
+--
+-labNombre: JLabel
+-labCalificacion: JLabel
+-chkVisitado: JCheckBox
+--
++PanelDetallesRestaurante(): ctor
+-actualizarRestaurante(String nombre, int calificacion, boolean visitado): void
++actualizarRestaurante(Restaurante r): void
+-buscarIconoCalificacion(int calificacion): ImageIcon
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>942</x>
+      <y>240</y>
+      <w>270</w>
+      <h>96</h>
+    </coordinates>
+    <panel_attributes>uniandes.dpoo.swing.interfaz.principal::PanelLista
+--
+-listaDeRestaurantes: JList&lt;Restaurante&gt;
+-dataModel: DefaultListModel&lt;Restaurante&gt;
+-ventanaPrincipal: VentanaPrincipal
+--
++PanelLista(VentanaPrincipal ventanaPrincipal): ctor
++actualizarRestaurantes(List&lt;Restaurante&gt; restaurantes): void
++valueChanged(ListSelectionEvent e): void
++seleccionarRestaurante(Restaurante restaurante): void
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>618</x>
+      <y>66</y>
+      <w>354</w>
+      <h>156</h>
+    </coordinates>
+    <panel_attributes>uniandes.dpoo.swing.interfaz.principal::VentanaPrincipal
+--
+-mundo: Diario
+-pBotones: PanelBotones
+-pDetalles: PanelDetallesRestaurante
+-pLista: PanelLista
+-ventanaMapa: VentanaMapa
+-ventanaAgregar: VentanaAgregarRestaurante
+--
++VentanaPrincipal(Diario elDiario): ctor
++mostrarVetanaNuevoRestaurante(): void
++mostrarVentanaMapa(): void
++agregarRestaurante(String nombre, int calificacion, int x, int y, boolean visitado): void
++getRestaurantes(boolean completos): List&lt;Restaurante&gt;
+-actualizarRestaurantes(): void
++cambiarRestauranteSeleccionado(Restaurante seleccionado): void
++main(String[] args): void
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>948</x>
+      <y>390</y>
+      <w>252</w>
+      <h>66</h>
+    </coordinates>
+    <panel_attributes>uniandes.dpoo.swing.mundo::Diario
+--
+-restaurantes: List&lt;Restaurante&gt;
+--
++Diario(): ctor
++getRestaurantes(boolean completos): List&lt;Restaurante&gt;
++agregarRestaurante(Restaurante restaurante): void
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>618</x>
+      <y>390</y>
+      <w>324</w>
+      <h>138</h>
+    </coordinates>
+    <panel_attributes>uniandes.dpoo.swing.mundo::Restaurante
+--
+-nombre: String
+-calificacion: int
+-coordenadaX: int
+-coordenadaY: int
++visitado: boolean
+--
++Restaurante(String nombre, int calificacion, int x, int y, boolean visitado): ctor
++getNombre(): String
++getCalificacion(): int
++getX(): int
++getY(): int
++isVisitado(): boolean
++toString(): String
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>0</x>
+      <y>48</y>
+      <w>588</w>
+      <h>270</h>
+    </coordinates>
+    <panel_attributes>uniandes.dpoo.swing.interfaz.agregar
+bg=orange</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>1236</x>
+      <y>72</y>
+      <w>636</w>
+      <h>132</h>
+    </coordinates>
+    <panel_attributes>uniandes.dpoo.swing.interfaz.mapa
+bg=orange</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>612</x>
+      <y>48</y>
+      <w>606</w>
+      <h>294</h>
+    </coordinates>
+    <panel_attributes>uniandes.dpoo.swing.interfaz.principal
+bg=orange</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>612</x>
+      <y>372</y>
+      <w>594</w>
+      <h>168</h>
+    </coordinates>
+    <panel_attributes>uniandes.dpoo.swing.mundo
+bg=orange</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>588</x>
+      <y>198</y>
+      <w>486</w>
+      <h>204</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>790.0;320.0;790.0;260.0;10.0;260.0;10.0;10.0;50.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>750</x>
+      <y>216</y>
+      <w>18</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>10.0;40.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>912</x>
+      <y>216</y>
+      <w>114</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>170.0;40.0;170.0;30.0;10.0;30.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>966</x>
+      <y>156</y>
+      <w>144</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>220.0;10.0;220.0;40.0;10.0;40.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>966</x>
+      <y>156</y>
+      <w>288</w>
+      <h>54</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>460.0;10.0;430.0;10.0;430.0;70.0;10.0;70.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1602</x>
+      <y>162</y>
+      <w>186</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>290.0;10.0;290.0;30.0;10.0;30.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>936</x>
+      <y>450</y>
+      <w>138</w>
+      <h>66</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=0..n</panel_attributes>
+    <additional_attributes>10.0;80.0;210.0;80.0;210.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>252</x>
+      <y>180</y>
+      <w>378</w>
+      <h>18</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;610.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>126</x>
+      <y>192</y>
+      <w>18</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>10.0;40.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>210</x>
+      <y>192</y>
+      <w>138</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>210.0;40.0;210.0;20.0;10.0;20.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>252</x>
+      <y>156</y>
+      <w>180</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>280.0;10.0;280.0;30.0;10.0;30.0</additional_attributes>
+  </element>
+</diagram>
